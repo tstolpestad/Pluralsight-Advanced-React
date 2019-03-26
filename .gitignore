@@ -2,4 +2,5 @@ node_modules/
 .idea/
 coverage/
 public/
+build/
 .idea/workspace.xml

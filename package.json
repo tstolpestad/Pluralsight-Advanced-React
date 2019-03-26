@@ -8,13 +8,15 @@
   "scripts": {
     "dev": "set NODE_PATH=./lib&& nodemon --exec babel-node lib/server.js",
     "webpack": "webpack -wd",
+    "build-webpack": "webpack -p",
+    "build-node": "babel lib -d build --copy-files",
     "test": "jest --watchAll",
     "test-verify": "jest --coverage"
   },
   "babel": {
     "presets": [
       "@babel/react",
-      "@babel/env"
+      ["@babel/env", {"targets": {"node": "current"}}]
     ],
     "plugins": [
       "@babel/plugin-proposal-class-properties"
