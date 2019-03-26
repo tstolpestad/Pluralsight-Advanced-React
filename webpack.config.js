@@ -1,10 +1,23 @@
 const path = require('path');
 
 module.exports = {
-    entry: ['@babel/polyfill','./lib/components/Index.js'],
+    resolve: {
+        modules: [
+            path.resolve('./node_modules'),
+            path.resolve('./lib')
+        ]
+    },
+    entry:{
+        app: ['./lib/renderers/dom.js']
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     module: {
         rules: [

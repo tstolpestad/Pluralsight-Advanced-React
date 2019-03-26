@@ -7,12 +7,15 @@
     <title>Pluralsight advanced react</title>
     <meta name="description" content="Advanced React">
     <meta name="author" content="Tonje Stolpestad">
-
+<script type="text/javascript">
+window.initialData = <%- JSON.stringify(initialData) -%>
+</script>
 
 </head>
 
 <body>
-<div id="root"><%- initialContent -%></div>
-<script src="/bundle.js" charset="UTF-8" ></script>
+<div id="root"><%- initialMarkup -%></div>
+<script src="/app.js?version=1" charset="UTF-8" ></script>
+<script src="/vendors~app.js?version=1" charset="UTF-8" ></script>
 </body>
 </html>
